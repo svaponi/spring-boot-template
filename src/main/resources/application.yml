@@ -1,12 +1,5 @@
-spring.profiles.include: hello
-
-# disable actuator security
-security.basic.enabled: false
-management.security.enabled: false
-
-# to be exposed on '/info' endpoint
-info:
-  id: @project.groupId@:@project.artifactId@:@project.version@
-  github-url: https://github.com/svaponi/spring-boot-template
+server.port: 8080
+spring.profiles.include: hello, unsecured, spring-admin
+info.id: @project.groupId@:@project.artifactId@:@project.version@
 
 
