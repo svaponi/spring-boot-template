@@ -1,0 +1,10 @@
+hello:
+  path: /hi
+  name: stranger
+  template: Hi %s!
+
+spring:
+  boot.admin:
+    url: http://localhost:9001
+    username: admin
+    password: admin

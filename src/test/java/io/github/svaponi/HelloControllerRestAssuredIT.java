@@ -19,13 +19,13 @@ import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ActiveProfiles("it")
-public class MessageControllerRestAssuredIT {
+@ActiveProfiles("integration-test")
+public class HelloControllerRestAssuredIT {
 
     @LocalServerPort
     private int port;
 
-    @Value("${path.message}")
+    @Value("${hello.path}")
     private String path;
 
     @Before
@@ -34,13 +34,13 @@ public class MessageControllerRestAssuredIT {
     }
 
     @Test
-    public void sayHiShouldReply() {
+    public void helloShouldReply() {
         get(path).then().statusCode(200).assertThat()
                 .body("message", equalTo("Hi stranger!"));
     }
 
     @Test
-    public void sayHiShouldReplyWithName() {
+    public void helloShouldReplyWithName() {
         get(path + "?name=Sam").then().statusCode(200).assertThat()
                 .body("message", equalTo("Hi Sam!"));
     }

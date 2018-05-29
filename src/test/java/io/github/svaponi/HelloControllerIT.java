@@ -25,8 +25,8 @@ import static org.junit.Assert.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ActiveProfiles("it")
-public class MessageControllerIT {
+@ActiveProfiles("integration-test")
+public class HelloControllerIT {
 
     @LocalServerPort
     private int port;
@@ -36,7 +36,7 @@ public class MessageControllerIT {
     @Autowired
     private TestRestTemplate template;
 
-    @Value("${path.message}")
+    @Value("${hello.path}")
     private String path;
 
     @Before
@@ -45,14 +45,14 @@ public class MessageControllerIT {
     }
 
     @Test
-    public void sayHiShouldReply() throws Exception {
+    public void helloShouldReply() throws Exception {
         final URL base = new URL("http://" + localhost + ":" + port + path);
         final ResponseEntity<AnyResource> response = template.getForEntity(base.toString(), AnyResource.class);
         assertThat(response.getBody().fields().get("message"), equalTo("Hi stranger!"));
     }
 
     @Test
-    public void sayHiShouldReplyWithName() throws Exception {
+    public void helloShouldReplyWithName() throws Exception {
         final URL base = new URL("http://" + localhost + ":" + port + path + "?name=Sam");
         final ResponseEntity<AnyResource> response = template.getForEntity(base.toString() + "", AnyResource.class);
         assertThat(response.getBody().fields().get("message"), equalTo("Hi Sam!"));

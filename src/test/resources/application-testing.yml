@@ -1,0 +1,2 @@
+# disable spring admin
+spring.boot.admin.url:

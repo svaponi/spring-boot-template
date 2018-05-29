@@ -1,5 +1,4 @@
 server.port: 8080
-spring.profiles.include: hello, unsecured, spring-admin
+spring.profiles.include: unsecured, refresh-scope
 info.id: @project.groupId@:@project.artifactId@:@project.version@
-
-
+hello.path: /hello

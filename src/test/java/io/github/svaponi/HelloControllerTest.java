@@ -12,23 +12,22 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class MessageControllerTest {
+public class HelloControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
-    @Value("${path.message}")
+    @Value("${hello.path}")
     private String path;
 
     @Test
-    public void sayHiShouldReply() throws Exception {
+    public void helloShouldReply() throws Exception {
 
         final MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get(path)
                 .accept(MediaType.APPLICATION_JSON);
@@ -39,7 +38,7 @@ public class MessageControllerTest {
     }
 
     @Test
-    public void sayHiShouldReplyWithName() throws Exception {
+    public void helloShouldReplyWithName() throws Exception {
 
         final MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get(path)
                 .param("name", "Sam")

@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
-@ActiveProfiles("it")
+@ActiveProfiles("integration-test")
 public class HelloApplicationIT {
 
     @Value("${label}")
