@@ -1,1 +1,2 @@
 info.project-id: @project.groupId@:@project.artifactId@:@project.version@
+spring.jackson.serialization.indent_output: true
