@@ -1,0 +1,16 @@
+spring.datasource.url: jdbc:h2:mem:foo;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+spring.h2.console:
+  enabled: true
+  path: /h2
+
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true
+    corsEnabled: true
+
+graphiql:
+  mapping: /graphql-ui
+  endpoint: /graphql-ui
+  enabled: true

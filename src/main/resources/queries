@@ -1,0 +1,22 @@
+query {
+    recentPosts(size: 10) {
+        id
+        content
+        author {
+            id
+            name
+        }
+    }
+}
+
+
+mutation {
+    writePost(content: "bang", authorName: "steve") {
+        id
+        content
+        author {
+            id
+            name
+        }
+    }
+}

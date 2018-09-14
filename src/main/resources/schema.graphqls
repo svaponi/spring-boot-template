@@ -1,0 +1,24 @@
+
+# The “!” indicates that this is a non-nullable type
+
+type Post {
+    id: ID!
+    content: String!
+    author: Author!
+}
+ 
+type Author {
+    id: ID!
+    name: String!
+    posts: [Post]!
+}
+ 
+# The Root Query for the application
+type Query {
+    recentPosts(size: Int): [Post]!
+}
+ 
+# The Root Mutation for the application
+type Mutation {
+    writePost(content: String!, authorName: String!) : Post!
+}
