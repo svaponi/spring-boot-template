@@ -14,15 +14,15 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
-@ActiveProfiles("it")
+@ActiveProfiles("integration-test")
 public class HelloApplicationIT {
 
-    @Value("${label}")
-    private String label;
+    @Value("${test-category}")
+    private String testCategory;
 
     @Test
     public void contextLoads() {
-        assertThat(label).isEqualTo("integration");
+        assertThat(testCategory).isEqualTo("integration");
     }
 
 }
