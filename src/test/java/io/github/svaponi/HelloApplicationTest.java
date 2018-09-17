@@ -17,12 +17,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ActiveProfiles("unit-test")
 public class HelloApplicationTest {
 
-    @Value("${label}")
-    private String label;
+    @Value("${test-category}")
+    private String testCategory;
 
     @Test
     public void contextLoads() {
-        assertThat(label).isEqualTo("unit");
+        assertThat(testCategory).isEqualTo("unit");
     }
 
 }
